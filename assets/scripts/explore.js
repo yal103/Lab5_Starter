@@ -29,9 +29,35 @@ function init() {
             voiceSelect.appendChild(option);
         }
     }
-    
+
     populateVoiceList();
     if (speechSynthesis.onvoiceschanged !== undefined) {
         speechSynthesis.onvoiceschanged = populateVoiceList;
     }
+
+    // on talk button click
+    talkBtn.addEventListener('click', (event) => {
+        event.preventDefault();
+        const utterThis = new SpeechSynthesisUtterance(input.value);
+        
+        // selected voice
+        const selectedOption = voiceSelect.selectedOptions[0].getAttribute('data-name');
+        for (let i = 0; i < voices.length; i++) {
+            if (voices[i].name === selectedOption) {
+                utterThis.voice = voices[i];
+            }
+        }
+
+        // face when talking starts
+        utterThis.addEventListener('start', function() {
+            face.src = 'assets/images/smiling-open.png';
+        });
+
+        // face when speaking ends
+        utterThis.addEventListener('end', function() {
+            face.src = 'assets/images/smiling.png';
+        });
+
+        synth.speak(utterThis);
+    });
 }
