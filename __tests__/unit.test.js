@@ -44,3 +44,20 @@ test('invalid email: no @', () => {
 test('invalid email: no domain', () => {
     expect(isEmail('gmail@.com')).toBe(false);
 });
+
+// isStrongPassword tests
+test('valid password', () => {
+    expect(isStrongPassword('aaa0')).toBe(true);
+});
+
+test('valid password: max length', () => {
+    expect(isStrongPassword('abcdEfGhIjKlMnO')).toBe(true);
+});
+
+test('invalid password: too short', () => {
+    expect(isStrongPassword('a12')).toBe(false);
+});
+
+test('invalid password: starts with number', () => {
+    expect(isStrongPassword('1abcde')).toBe(false);
+});
