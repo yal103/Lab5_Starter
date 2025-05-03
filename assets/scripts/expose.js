@@ -44,4 +44,13 @@ function init() {
             volumeImg.src = 'assets/icons/volume-level-3.svg';
         }
     });
+
+    // on play button click
+    playBtn.addEventListener('click', function() {
+        audio.play();
+
+        if (selection.value === 'party-horn') {
+            confetti.addConfetti();
+        }
+    });
 }
