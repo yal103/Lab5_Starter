@@ -78,3 +78,20 @@ test('invalid date: wrong separator', () => {
 test('invalid date: wrong year length', () => {
     expect(isDate('01-01-25')).toBe(false);
 });
+
+// isHexColor tests
+test('valid hex color: 6 digits', () => {
+    expect(isHexColor('afe')).toBe(true);
+});
+
+test('valid hex color: 3 digits', () => {
+    expect(isHexColor('aabbcc')).toBe(true);
+});
+
+test('invalid hex color: too long', () => {
+    expect(isHexColor('aabbccc')).toBe(false);
+});
+
+test('invalid hex color: wrong character', () => {
+    expect(isHexColor('zzxxyy')).toBe(false);
+});
