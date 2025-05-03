@@ -61,3 +61,20 @@ test('invalid password: too short', () => {
 test('invalid password: starts with number', () => {
     expect(isStrongPassword('1abcde')).toBe(false);
 });
+
+// isDate tests
+test('valid date', () => {
+    expect(isDate('01/01/2025')).toBe(true);
+});
+
+test('valid date', () => {
+    expect(isDate('1/1/2025')).toBe(true);
+});
+
+test('invalid date: wrong separator', () => {
+    expect(isDate('01-01-2025')).toBe(false);
+});
+
+test('invalid date: wrong year length', () => {
+    expect(isDate('01-01-25')).toBe(false);
+});
