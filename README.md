@@ -2,6 +2,9 @@
 
 ### Contributors: Yangyang Liu
 
+### Expose: [https://yal103.github.io/Lab5_Starter/expose.html](https://yal103.github.io/Lab5_Starter/expose.html)
+
+### Explore: [https://yal103.github.io/Lab5_Starter/explore.html](https://yal103.github.io/Lab5_Starter/explore.html)
 ### Pt 3. Unit Testing with Jest
 
 1. Would you use a unit test to test the "message" feature of a messaging application? Why or why not? For this question, assume the "message" feature allows a user to write and send a message to another user.
