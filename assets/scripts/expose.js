@@ -10,7 +10,7 @@ function init() {
     const volumeImg = document.querySelector('#volume-controls img');
     const playBtn = document.querySelector('button');
     const audio = document.querySelector('audio');
-    const confetti = new JSConfetti();
+    const jsConfetti = new JSConfetti();
     // console.log(hornImg);
     // console.log(selection);
     // console.log(slider);
@@ -50,7 +50,7 @@ function init() {
         audio.play();
 
         if (selection.value === 'party-horn') {
-            confetti.addConfetti();
+            jsConfetti.addConfetti();
         }
     });
 }
